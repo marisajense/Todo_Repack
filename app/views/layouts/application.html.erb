@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TodoApp</title>
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <% if Rails.env.development? %>
+      <script src="http://localhost:3808/webpack-dev-server.js"></script>
+    <% end %>
+</head>
+
+  <body>
+    <%= yield %>
+  <%= javascript_include_tag *webpack_asset_paths('application') %>
+</body>
+</html>
